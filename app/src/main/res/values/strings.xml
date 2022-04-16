@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">videoYoutube</string>
     <string name="movie_title">Doctor Strange</string>
+    <string name="director_label">Director:</string>
+    <string name="director">Sam Raimi</string>
+    <string name="description">After the events of Avengers: Endgame, Dr. Stephen Strange continues his research on the Time Stone. But an old friend turned enemy seeks to destroy every sorcerer on Earth, messing with Strange’s plan and also causing him to unleash an unspeakable evil.</string>
+    <string name="actors_label">Actors</string>
+    <string name="actor1">Benedict Cumberbatch</string>
+    <string name="actor2">Elizabeth Olsen</string>
+    <string name="actor3">Chiwetel Ejiofor</string>
+    <string name="actor4">Benedict Wong</string>
+    <string name="watch">watch</string>
+    <string name="like">like</string>
+    <string name="share">share</string>
 </resources>

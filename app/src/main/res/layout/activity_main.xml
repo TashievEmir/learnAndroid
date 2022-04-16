@@ -9,27 +9,197 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
         <ImageView
             android:id="@+id/banner"
             android:layout_width="414dp"
-            android:layout_height="172dp"
+            android:layout_height="250dp"
             android:adjustViewBounds="true"
             android:src="@drawable/strange3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
         </ImageView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentBegin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="15dp"
+        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentEnd"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="15dp"
+            />
         <TextView
+            android:id="@+id/movie_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/movie_title"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            app:layout_constraintTop_toBottomOf="@+id/banner"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toBottomOf="@id/banner"
+            app:layout_constraintStart_toStartOf="@id/contentBegin"
+            app:layout_constraintEnd_toStartOf="@id/poster"
+            app:layout_goneMarginEnd="20dp"
+
             >
         </TextView>
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/strange"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toBottomOf="@id/banner"
+            app:layout_constraintEnd_toEndOf="@id/contentEnd"
 
+            >
+        </ImageView>
+        <TextView
+            android:id="@+id/director_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/director_label"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintTop_toBottomOf="@id/movie_title"
+            app:layout_constraintStart_toStartOf="@id/contentBegin"
+            app:layout_goneMarginTop="50dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/director"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/director"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintStart_toEndOf="@id/director_label"
+            app:layout_constraintEnd_toStartOf="@id/poster"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBaseline_toBaselineOf="@id/director_label"
+            android:layout_marginStart="10dp"
+            app:layout_constrainedWidth="true"
+            >
+        </TextView>
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/title_section_bottom_barrier"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="movie_title,poster,director_label,director"
+            />
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/title_section_bottom_barrier"
+            app:layout_constraintStart_toStartOf="@id/contentBegin"
+            app:layout_constraintEnd_toEndOf="@id/contentEnd"
+            android:layout_marginTop="10dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/actors_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/actors_label"
+            android:textSize="22sp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            app:layout_constraintStart_toStartOf="@id/contentBegin"
+            app:layout_goneMarginTop="50dp"
+            android:layout_marginTop="5dp"
+            >
+        </TextView>
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/actors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="actor1,actor2,actor3,actor4"
+            app:layout_constraintTop_toBottomOf="@id/actors_label"
+            app:flow_wrapMode="chain"
+            app:flow_horizontalBias="0"
+            app:layout_constraintStart_toStartOf="@id/contentBegin"
+            app:layout_constraintEnd_toEndOf="@id/contentEnd"
+            app:flow_horizontalStyle="packed"
+            app:flow_verticalStyle="packed"
+            app:flow_horizontalGap="10dp"
+            app:flow_verticalGap="5dp"
+
+        />
+        <TextView
+            android:id="@+id/actor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/actor1"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/actor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/actor2"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/actor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/actor3"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/actor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/actor4"
+            >
+        </TextView>
+        <Button
+            android:id="@+id/watch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/watch"
+            app:layout_goneMarginEnd="0dp"
+            app:layout_constraintStart_toStartOf="@id/contentBegin"
+            app:layout_constraintTop_toBottomOf="@id/actors"
+            app:layout_constraintEnd_toStartOf="@id/like"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_marginTop="20dp"
+            >
+        </Button>
+        <Button
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/like"
+        android:layout_marginTop="20dp"
+        app:layout_goneMarginEnd="0dp"
+        app:layout_constraintStart_toEndOf="@id/watch"
+        app:layout_constraintTop_toBottomOf="@id/actors"
+        app:layout_constraintEnd_toStartOf="@id/share"
+        android:layout_marginStart="10dp"
+        >
+    </Button>
+        <Button
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share"
+            android:layout_marginTop="20dp"
+            app:layout_goneMarginEnd="0dp"
+            app:layout_constraintStart_toEndOf="@id/like"
+            app:layout_constraintTop_toBottomOf="@id/actors"
+            app:layout_constraintEnd_toEndOf="@id/contentEnd"
+            android:layout_marginStart="10dp"
+            >
+        </Button>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
